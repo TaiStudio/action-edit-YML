@@ -4,7 +4,10 @@ on: push
     
 jobs:
   test:
-    runs-on: windows-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
     steps:
     - name: Edit Files
       uses: TaiStudio/action-edit-YML@main
