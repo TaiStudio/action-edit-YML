@@ -1,18 +1,7 @@
-FROM mhart/alpine-node:12.19.1
+FROM node:14.4.0-buster-slim
 
-LABEL "com.github.actions.name"="Action edit YML files"
-LABEL "com.github.actions.description"="Edit YML file in Github Actions."
-LABEL "com.github.actions.icon"="message-square"
-LABEL "com.github.actions.color"="gray-dark"
+COPY . .
 
-LABEL "repository"="https://github.com/TaiStudio/action-edit-YML"
-LABEL "homepage"="https://github.com/TaiStudio/action-edit-YML"
-LABEL "maintainer"="Tai Studio <tai.studio@outlook.fr>"
-LABEL "version"="1.0.0"
+RUN npm install --production
 
-ADD package.json package-lock.json /
-RUN npm ci --production
-ADD main.js /
-RUN chmod +x /main.js
-
-ENTRYPOINT ["node", "/main.js"]
+ENTRYPOINT ["node", "/lib/main.js"]
