@@ -8,3 +8,19 @@ runs:
 branding:
   icon: circle
   color: black
+inputs:
+  type:
+    description: 'Must be an string. For example, single'
+    default: 'single'
+  files:
+    description: 'the file path to replace. For example, ./example/lastest.yml'
+    default: './example/lastest.yml'
+  elementSTR:
+    description: 'the value to replace. For example, ['files'][0]['url']'
+    default: '['files'][0]['url']'
+  replace:
+    description: 'the string to find. For example, -'
+    default: '-'
+  replaceFor:
+    description: 'replace the value with this one. For example, .'
+    default: '.'
