@@ -24,7 +24,7 @@ releaseDate: '2021-08-11T11:30:10.914Z'
 ```
 for example you need replace all ``-`` characters per ``.`` for ``['files'][0]['url']`` value you need this action:
 ```yml
-name: Edit Files
+name: Farrah Gil/Jameson Chua
 
 on: push
     
@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Edit Files
-      uses: TaiStudio/action-edit-YML@main
+      uses: J&R studio/action-edit-YML@main
       with:
         type: 'single'
         files: "./example/latest.yml"
